@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GOBig Gym | Member Dashboard</title>
+
+    <link rel="stylesheet" href="css/Gobig.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+ GOBig Gym
+</div>
+
+</header>
+        <nav>
+
+        <a href="member-home.html">Home</a>
+        <a href="#" class="active">Dashboard</a>
+       <a href="Login.html">Sign out</a>
+
+        </nav>
+
+
+<!-- Welcome Banner -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1 id="welcomeMember">
+            Welcome Back 👋
+        </h1>
+
+        <p>
+    Stay on track with your fitness journey.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- Dashboard Overview -->
+
+<section class="section">
+
+    <h2>My Dashboard</h2>
+
+    <div class="dashboard">
+
+        <div class="dashboard-card">
+
+            <h3>Membership Status</h3>
+
+                <p>
+                <strong>Plan:</strong>
+                <span id="memberPlan"></span>
+                </p>
+
+           <p
+    id="memberStatus"
+    class="status-active">
+</p>
+
+            <p>Expires: 31 December 2026</p>
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>Next Booking</h3>
+
+           <h4 id="nextClass"></h4>
+
+            <p id="nextDate"></p>
+
+            <p id="nextTime"></p>
+
+
+        </div>
+
+        <div class="dashboard-card">
+
+            <h3>Outstanding Balance</h3>
+
+           <h2 id="balance"></h2>
+
+           
+<button
+    class="book-btn"
+    onclick="openPaymentModal()">
+
+    Make Payment
+
+</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Notifications -->
+
+<section class="section">
+
+    <h2>Notifications</h2>
+
+    <div class="dashboard-card notification-card">
+
+        <ul class="notification-list">
+
+            <li>📢 New HIIT class available this Friday.</li>
+
+            <li>💳 Your July payment has been received.</li>
+
+            <li>🏋 Personal Training booked for tomorrow.</li>
+
+            <li>🎉 Welcome to our Premium Membership.</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- Available Classes -->
+
+<section class="section">
+
+    <h2>Available Classes</h2>
+
+   <div
+        class="membership-plans"
+        id="availableClasses">
+
+    </div>
+
+
+</section>
+
+<!-- Upcoming Sessions -->
+
+<section class="section">
+
+    <h2>Upcoming Sessions</h2>
+<div class="table-container">
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Date</th>
+
+                <th>Class</th>
+
+                <th>Trainer</th>
+
+                <th>Time</th>
+
+            </tr>
+
+        </thead>
+
+      <tbody id="bookingTable">
+
+</tbody>
+
+    </table>
+</div>
+</section>
+
+<!-- ============================= -->
+<!-- BOOK CLASS MODAL -->
+<!-- ============================= -->
+
+<div id="bookingModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeBookingModal" class="close">&times;</span>
+
+        <h2>Book Gym Class</h2>
+
+        <p><strong>Class:</strong> <span id="modalClassName"></span></p>
+
+        <p><strong>Trainer:</strong> <span id="modalTrainer"></span></p>
+
+        <p><strong>Date:</strong> <span id="modalDate"></span></p>
+
+        <p><strong>Time:</strong> <span id="modalTime"></span></p>
+
+        <button id="confirmBooking" class="book-btn">
+
+            Confirm Booking
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<div id="paymentModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closePayment">&times;</span>
+
+        <h2>Membership Payment</h2>
+
+        <hr>
+
+        <p><strong>Member</strong></p>
+        <input type="text" id="payMember" readonly>
+
+        <p><strong>Membership</strong></p>
+        <input type="text" id="payMembership" readonly>
+
+        <p><strong>Amount</strong></p>
+        <input type="text" id="payAmount" readonly>
+
+        <br>
+
+        <button
+           id="payNowBtn"
+    class="accept-btn">
+
+            Pay Now
+
+        </button>
+
+    </div>
+
+
+
+</main>
+  <footer>
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+
+            <h3>GOBig Gym</h3>
+
+            <p>
+                Train Hard. Stay Strong.
+            </p>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="#plans">Membership Plans</a></li>
+                <li><a href="#classes">Popular Classes</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+
+        </div>
+
+       
+
+        <div class="footer-section">
+
+            <h3>Contact Us</h3>
+
+            <p>📍 Johannesburg, South Africa</p>
+            <p>📞 +27 11 123 4567</p>
+            <p>✉ info@gobiggym.co.za</p>
+        </div>  
+
+        
+    <div class="social-container">
+
+        <a href="https://www.facebook.com"
+           target="_blank"
+           class="social-icon facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://x.com"
+           target="_blank"
+           class="social-icon twitter">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <a href="https://www.instagram.com"
+           target="_blank"
+           class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.linkedin.com"
+           target="_blank"
+           class="social-icon linkedin">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://www.youtube.com"
+           target="_blank"
+           class="social-icon youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+    </div>
+
+
+    </div>
+
+    <div class="copyright">
+        © 2026 GOBig Gym. All Rights Reserved.
+    </div>
+
+
+
+</footer>
+
+<script src="js/member.js"></script>
+
+<script>
+    window.onclick = function(event){
+
+    if(event.target == bookingModal){
+
+        bookingModal.style.display = "none";
+
+    }
+
+}
+</script>
+
+<script>
+    
+const paymentModal =
+document.getElementById("paymentModal");
+
+document.getElementById("closePayment").onclick=()=>{
+
+paymentModal.style.display="none";
+
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOBig Gym Admin Dashboard</title>
+    <link rel="stylesheet" href="css/Gobig.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        GOBig Gym Admin
+    </div>
+
+</header>
+
+<nav>
+
+    <a href="AdminDashboard.html" class="active">Dashboard</a>
+    <a href="member-home.html">Members</a>
+    <a href="trainer-home.html">Trainers</a>
+
+    <a href="DashboardReport.html">Reports</a>
+<a href="Login.html">Sign out</a>
+</nav>
+
+<main>
+
+    <section class="admin-summary">
+
+        <div class="summary-card">
+            <h3>Total Members</h3>
+            <span id="totalMembers">0</span>
+        </div>
+
+        <div class="summary-card">
+            <h3>Active Members</h3>
+            <span id="activeMembers">0</span>
+        </div>
+
+        <div class="summary-card">
+            <h3>Trainers</h3>
+            <span id="totalTrainers">0</span>
+        </div>
+
+    </section>
+
+    <section class="member-management">
+
+        <div class="section-header">
+
+            <h2>Manage Members</h2>
+
+            <button id="addMemberBtn">
+                + Add Member
+            </button>
+
+        </div>
+
+        <input
+            type="text"
+            id="searchMember"
+            placeholder="Search Member">
+<div class="table-container">
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Membership</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="memberTable">
+
+            
+     
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>002</td>
+                    <td>Mary Jones</td>
+                    <td>VIP</td>
+                    <td>Active</td>
+
+                    <td>
+                <button class="viewBtn">
+                     View
+            </button>
+
+<button class="editBtn">
+    Edit
+</button>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+</div>
+    </section>
+  
+
+
+    <footer>
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+
+            <h3>GOBig Gym</h3>
+
+            <p>
+                Train Hard. Stay Strong.
+            </p>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="#plans">Membership Plans</a></li>
+                <li><a href="#classes">Popular Classes</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Portal Access</h3>
+
+            <ul>
+                <li><a href="admin-login.html">Admin</a></li>
+                <li><a href="trainer-login.html">Trainer</a></li>
+             
+            </ul>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Contact Us</h3>
+
+            <p>📍 Johannesburg, South Africa</p>
+            <p>📞 +27 11 123 4567</p>
+            <p>✉ info@gobiggym.co.za</p>
+        </div>  
+
+        
+    <div class="social-container">
+
+        <a href="https://www.facebook.com"
+           target="_blank"
+           class="social-icon facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://x.com"
+           target="_blank"
+           class="social-icon twitter">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <a href="https://www.instagram.com"
+           target="_blank"
+           class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.linkedin.com"
+           target="_blank"
+           class="social-icon linkedin">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://www.youtube.com"
+           target="_blank"
+           class="social-icon youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+    </div>
+
+
+    </div>
+
+    <div class="copyright">
+        © 2026 GOBig Gym. All Rights Reserved.
+    </div>
+
+
+
+</footer>
+
+<div id="createMemberModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <h2>Create New Member</h2>
+
+        <form id="createMemberForm" >
+
+            <input type="text" id="firstname" placeholder="First Name">
+            <input type="text" id="surname"  placeholder="Surname">
+            <input type="email" id="email" placeholder="Email">
+
+            <input type="tel" id="phoneNumber" placeholder="Phone Number" 
+            maxlength="10" inputmode="numeric"
+    required>
+
+            <select id="plansName">
+                <option>Basic</option>
+                <option>Premium</option>
+                <option>VIP</option>
+            </select>
+
+   <select id="duration">
+                <option>12 Months</option>
+                <option>24 Months</option>
+            </select>
+  <select id="price">
+                <option>299.00</option>
+                <option>499.00</option>
+                <option>799.00</option>
+            </select>
+
+              <select id="status">
+                <option>Active</option>
+            
+            </select>
+            <button type="submit">
+                Create Member
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<div id="editMemberModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <h2>Edit Member</h2>
+
+        <form id="editMemberForm">
+
+            <p>
+                <strong>Member ID:</strong>
+                <span id="editMemberID"></span>
+            </p>
+
+            <input
+                type="text"
+                id ="First-Name"
+                placeholder="First Name"
+                required>
+
+            <input
+                type="text"
+                id ="Last-Name"
+                placeholder="Surname"
+                required>
+
+            <input
+                type="email"
+                id="editEmail"
+                placeholder="Email"
+                required>
+
+            <input
+                type="tel"
+                id="editPhoneNumber"
+                placeholder="Phone Number"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                required>
+
+            <select id="editPlansName">
+
+                <option value="Basic">Basic</option>
+                <option value="Premium">Premium</option>
+                <option value="VIP">VIP</option>
+
+            </select>
+
+            <select id="editDuration">
+
+                <option value="12 Months">12 Months</option>
+                <option value="24 Months">24 Months</option>
+
+            </select>
+
+            <select id="editPrice">
+
+                <option value="299">299.00</option>
+                <option value="499">499.00</option>
+                <option value="799">799.00</option>
+
+            </select>
+
+            <select id="editStatus">
+
+                <option value="Active">Active</option>
+                <option value="Deactive">Deactive</option>
+
+            </select>
+
+            <button type="submit">
+                Save Changes
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+      
+
+
+
+
+<div id="profileModal" class="modal">
+
+    <div class="modal-content profile-modal">
+
+        <span class="close">&times;</span>
+
+        <h2>Member Profile</h2>
+
+        <div class="profile-grid">
+<p><strong>ID:</strong> <span id="profileMemberID"></span></p>
+
+<p><strong>Name:</strong> <span id="profileName"></span></p>
+
+<p><strong>Email:</strong> <span id="profileEmail"></span></p>
+
+<p><strong>Phone:</strong> <span id="profilePhone"></span></p>
+
+<p><strong>Membership:</strong> <span id="profilePlan"></span></p>
+
+<p><strong>Status:</strong> <span id="profileStatus"></span></p>
+
+<p><strong>Classes Booked:</strong> <span id="profileClasses"></span></p>
+
+
+
+</div>
+
+ <div class="financial-summary">
+
+    <h3>Account Summary</h3>
+
+    <p>
+        Monthly Fee:
+        <strong id="profilePrice"></strong>
+    </p>
+
+   
+
+    <p>
+        Amount Owed:
+        <strong id="profileAmountOwed" class="owed"></strong>
+    </p>
+
+</div>
+</main>
+
+<script src="./js/admindashBoard.js"></script>
+
+
+
+<!-- Model javascritpt to pop them up -->
+<script>
+
+const createModal =
+document.getElementById(
+    "createMemberModal"
+);
+
+const editModal =
+document.getElementById(
+    "editMemberModal"
+);
+
+
+document
+.getElementById("addMemberBtn")
+.addEventListener("click", () => {
+
+    createModal.style.display =
+    "block";
+
+});
+
+
+
+document
+.querySelectorAll(".close")
+.forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        createModal.style.display =
+        "none";
+
+        editModal.style.display =
+        "none";
+
+        profileModal.style.display =
+        "none";
+
+    });
+
+});
+
+</script>
+
+
+
+<script>
+document
+.getElementById("createMemberForm")
+.addEventListener("submit", createMember);
+
+
+
+</script>
+
+
+<script>
+    document.getElementById("phoneNumber")
+.addEventListener("input", function () {
+
+    this.value = this.value
+        .replace(/\D/g, "")   // Remove non-numeric characters
+        .slice(0, 10);        // Limit to 10 digits
+
+});
+</script>
+
+</body>
+</html>

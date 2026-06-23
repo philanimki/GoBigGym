@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOBig Gym Admin Dashboard</title>
+    <link rel="stylesheet" href="css/Gobig.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+        GOBig Gym Admin
+    </div>
+
+</header>
+
+<nav>
+
+    <a href="#" class="active">Dashboard</a>
+    <a href="Home.html">Members</a>
+
+    <a href="#">Reports</a>
+<a href="Login.html">Sign out</a>
+</nav>
+
+<main>
+<section class="page-header">
+
+    <h1>Membership Revenue Dashboard</h1>
+
+    <p>
+        View revenue performance, membership statistics and financial reports.
+    </p>
+
+</section>
+   
+<section class="charts-grid">
+
+    <div class="chart-card">
+
+        <h2>Revenue by Membership</h2>
+
+        <canvas id="revenueChart"></canvas>
+
+    </div>
+
+
+</section>
+<section class="report-summary">
+
+    <div class="dashboard-card">
+
+        <h3>Total Revenue</h3>
+
+        <h2 id="totalRevenue">0</h2>
+
+    </div>
+
+  
+
+    <div class="dashboard-card">
+
+        <h3>Average Revenue</h3>
+
+        <h2 id="basicRevenue">R0</h2>
+
+    </div>
+    <div class="dashboard-card">
+
+        <h3>Projected Annual Revenue</h3>
+
+        <h2 id="premiumRevenue">R0</h2>
+
+    </div>
+<div class="dashboard-card">
+
+    <h3>Total Revenue</h3>
+
+    <h2 id="vipRevenue">R0.00</h2>
+
+</div>
+</section>
+    <section class="member-management">
+
+        <div class="section-header">
+
+          
+
+<div class="table-container">
+
+  
+        <table>
+
+           
+
+            <tbody id="memberTable">
+
+            
+     <thead>
+
+<tr>
+
+    <th>Membership</th>
+
+    <th>Total Members</th>
+
+    <th>Monthly Revenue</th>
+
+    <th>Annual Revenue</th>
+
+</tr>
+
+</thead>
+
+<tbody id="reportTable">
+
+</tbody>
+
+          
+
+        </table>
+</div>
+
+
+
+</div>
+</section>
+ 
+
+<div class="financial-summary">
+
+</div>
+
+
+
+    <footer>
+
+    <div class="footer-container">
+
+        <div class="footer-section">
+
+            <h3>GOBig Gym</h3>
+
+            <p>
+                Train Hard. Stay Strong.
+            </p>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+                <li><a href="#plans">Membership Plans</a></li>
+                <li><a href="#classes">Popular Classes</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Portal Access</h3>
+
+            <ul>
+                <li><a href="admin-login.html">Admin</a></li>
+                <li><a href="trainer-login.html">Trainer</a></li>
+             
+            </ul>
+
+        </div>
+
+        <div class="footer-section">
+
+            <h3>Contact Us</h3>
+
+            <p>📍 Johannesburg, South Africa</p>
+            <p>📞 +27 11 123 4567</p>
+            <p>✉ info@gobiggym.co.za</p>
+        </div>  
+
+        
+    <div class="social-container">
+
+        <a href="https://www.facebook.com"
+           target="_blank"
+           class="social-icon facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://x.com"
+           target="_blank"
+           class="social-icon twitter">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+
+        <a href="https://www.instagram.com"
+           target="_blank"
+           class="social-icon instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.linkedin.com"
+           target="_blank"
+           class="social-icon linkedin">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="https://www.youtube.com"
+           target="_blank"
+           class="social-icon youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+    </div>
+
+
+    </div>
+
+    <div class="copyright">
+        © 2026 GOBig Gym. All Rights Reserved.
+    </div>
+
+
+
+</footer>
+
+</main>
+
+
+
+
+<script src="js/reports.js"></script>
+
+</body>
+</html>

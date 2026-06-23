@@ -1,0 +1,956 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f4f4;
+    overflow-x:hidden ;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+header{
+    background:#003049;
+    color:white;
+    padding:20px;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav{
+    background:#005f73;
+    padding:15px;
+    text-align:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#8ecae6;
+}
+nav a.active{
+    color:#8ecae6;
+    font-weight:bold;
+}
+
+.hero{
+    min-height:80vh;
+    background-image:url(../images/Background.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+    position:relative;
+    z-index:1;
+    color:white;
+    padding:30px;
+    text-align:center;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom:20px;
+}
+.section{
+    padding:50px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.card{
+    width:300px;
+    background:white;
+    padding:20px;
+    margin:20px;
+    border:1px solid #ddd;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    border-radius:10px;
+}
+.book-btn{
+    margin-top:15px;
+    width:100%;
+    background:#219ebc;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:5px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.book-btn:hover{
+    background:#126782;
+}
+
+.membership-plans{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:20px;
+
+}
+
+.modal{
+
+display:none;
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.5);
+
+}
+
+.modal-content{
+
+    width:90%;
+
+    max-width:450px;
+
+}
+.modal-content{
+
+background:#fff;
+
+width:400px;
+
+margin:8% auto;
+
+padding:25px;
+
+border-radius:10px;
+
+}
+
+.modal-content input{
+
+width:100%;
+
+padding:10px;
+
+margin-bottom:15px;
+
+}
+
+#closePayment{
+
+float:right;
+
+font-size:28px;
+
+cursor:pointer;
+
+}
+
+/** membership section */
+
+
+#plans{
+    background:#f8f9fa;
+    padding:80px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+    color:#003049;
+}
+
+.membership-plans{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.membership-plan{
+    width:320px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    position:relative;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+
+    opacity:0;
+
+    animation:fadeUp 0.8s ease forwards;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.membership-plan:hover{
+    transform:translateY(-15px) scale(1.03);
+
+    box-shadow:
+        0 20px 35px rgba(0,0,0,0.2);
+}
+
+.membership-plan h3{
+    font-size:1.8rem;
+    margin-bottom:15px;
+}
+
+.price{
+    font-size:3rem;
+    font-weight:bold;
+    color:#219ebc;
+    margin-bottom:20px;
+}
+
+.price::before{
+    content:"R";
+    font-size:1.5rem;
+    vertical-align:top;
+}
+.membership-plan ul{
+    list-style:none;
+    margin-bottom:25px;
+}
+
+.membership-plan ul li{
+    padding:10px 0;
+    border-bottom:1px solid #eee;
+}
+
+.membership-plan button{
+    width:100%;
+}
+
+.premium{
+    border:3px solid #219ebc;
+    transform:scale(1.05);
+}
+
+.popular{
+    position:absolute;
+    top:-12px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#219ebc;
+    color:white;
+    padding:5px 15px;
+    border-radius:20px;
+    font-size:0.8rem;
+}
+
+/*added the animation  */
+
+.membership-plan{
+    opacity:0;
+    transform:translateY(50px);
+    animation:fadeUp 0.8s ease forwards;
+}
+
+.membership-plan:nth-child(2){
+    animation-delay:0.2s;
+}
+
+.membership-plan:nth-child(3){
+    animation-delay:0.4s;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+
+
+.login-container,
+.payment-container{
+    width:400px;
+    margin:50px auto;
+    background:white;
+    padding:30px;
+    border:1px solid #ddd;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+input,
+select{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+}
+
+button{
+    background:#219ebc;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    cursor:pointer;
+    border-radius:5px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#126782;
+}
+
+.role-bar{
+    width:auto;
+    margin:20px auto;
+    background:#003049;
+    border:1px solid #444;
+    text-align:center;
+    padding:12px;
+}
+
+.role-bar a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+}
+
+.role-bar a:hover{
+    text-decoration:underline;
+    color:#8ecae6;
+}
+
+
+
+
+/*member profile page*/
+
+.dashboard-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+    flex:1;
+
+    min-width:280px;
+
+    transition:.3s;
+
+}
+.dashboard-card:hover{
+
+    transform:translateY(8px);
+
+}
+
+
+.status-active{
+
+    display:inline-block;
+
+    background:#28a745;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    margin:10px 0;
+
+}
+
+.notification-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.notification-list{
+
+    list-style:none;
+
+}
+
+.notification-list li{
+
+    padding:15px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.notification-list li:last-child{
+
+    border-bottom:none;
+
+}
+
+.dashboard{
+      display:flex;
+    justify-content:center;
+    align-items:stretch;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:20px 0;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width: 700px;
+}
+.table-container{
+    overflow-x:auto;
+   
+}
+th,td{
+    border:1px solid #ddd;
+    padding:10px;
+    text-align:center;
+}
+
+
+.about-section{
+    background:#003049;
+    color:white;
+}
+
+.about-section h2{
+    margin-bottom:20px;
+}
+
+.about-text{
+    max-width:800px;
+    margin:0 auto 40px;
+    line-height:1.8;
+}
+
+.about-features{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+    margin-bottom:50px;
+}
+
+.feature-box{
+    width:300px;
+    background:#005f73;
+    padding:25px;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.feature-box:hover{
+    transform:translateY(-10px);
+    background:#219ebc;
+}
+
+.gym-stats{
+    display:flex;
+    justify-content:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.stat h3{
+    font-size:2.5rem;
+    color:#8ecae6;
+}
+
+.stat p{
+    margin-top:10px;
+}
+
+footer{
+    background:#003049;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:2px;
+}
+
+.footer-container{
+    display:flex;
+    justify-content:space-around;
+    flex-wrap:wrap;
+    padding:30px;
+}
+
+.footer-section{
+    width:300px;
+    padding:15px;
+}
+
+.footer-section h3{
+    margin-bottom:15px;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section ul li{
+    margin-bottom:10px;
+}
+
+.footer-section a{
+    text-decoration:none;
+    color:white;
+}
+
+.footer-section a:hover{
+    color:#8ecae6;
+}
+
+.copyright{
+    text-align:center;
+    padding:15px;
+    border-top:1px solid rgba(255,255,255,0.2);
+}
+
+.social-container{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:15px;
+}
+
+.social-icon{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:white;
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.facebook{
+    background:#1877f2;
+}
+
+.twitter{
+    background:#000000;
+}
+
+.instagram{
+    background:linear-gradient(
+        45deg,
+        #f58529,
+        #dd2a7b,
+        #8134af
+    );
+}
+
+.linkedin{
+    background:#0a66c2;
+}
+
+.youtube{
+    background:#ff0000;
+}
+.social-icon:hover{
+    transform:translateY(-5px) scale(1.1);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Admin dashboard CSS */
+
+.admin-summary{
+    display:flex;
+    gap:20px;
+    padding:20px;
+    flex-wrap:wrap;
+}
+
+.summary-card{
+    flex:1;
+    min-width:250px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+
+    text-align:center;
+}
+
+.summary-card span{
+    font-size:2rem;
+    font-weight:bold;
+    color:#219ebc;
+}
+
+.member-management{
+    background:white;
+    margin:20px;
+    padding:25px;
+
+    border-radius:10px;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+#searchMember{
+    margin-bottom:20px;
+}
+
+/*Modal pop ups css */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:
+        rgba(0,0,0,0.6);
+
+    z-index:1000;
+
+}
+
+.modal-content{
+
+    background:white;
+
+    width:90%;
+    max-width:600px;
+
+    margin:5% auto;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    position:relative;
+
+}
+
+.close{
+
+    position:absolute;
+
+    top:15px;
+    right:20px;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+}
+
+.profile-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+.financial-summary{
+
+    background:#f8f9fa;
+
+    padding:20px;
+
+    border-radius:10px;
+
+}
+
+.owed{
+    color:red;
+    font-weight:bold;
+}
+.pie-container{
+
+    width:350px;
+
+    height:350px;
+
+    margin:auto;
+
+}
+
+.pie-container canvas{
+
+    width:100% !important;
+
+    height:100% !important;
+
+}
+
+
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+    }
+
+    nav{
+        margin-top:2px;
+        width: 100%;
+    }
+nav a{
+    display:block;
+    margin:10px 0;
+}
+    .cards{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .dashboard{
+        flex-direction:column;
+    }
+
+    .login-container,
+    .payment-container{
+        width:90%;
+    }
+
+    .about-features,
+.gym-stats{
+    flex-direction:column;
+    align-items:center;
+}
+  .social-container{
+        flex-wrap:wrap;
+    }
+
+.table-container{
+
+overflow-x:auto;
+
+}
+
+
+
+table{
+
+min-width:700px;
+
+}
+
+.dashboard-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+
+    flex:1;
+
+    min-width:280px;
+
+    transition:.3s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.status-active{
+
+    display:inline-block;
+
+    background:#28a745;
+
+    color:white;
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    margin:10px 0;
+
+}
+
+.notification-card{
+
+    max-width:900px;
+
+    margin:auto;
+
+}
+
+.notification-list{
+
+    list-style:none;
+
+}
+
+.notification-list li{
+
+    padding:15px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.notification-list li:last-child{
+
+    border-bottom:none;
+
+}
+
+.book-btn{
+
+    margin-top:15px;
+
+    width:100%;
+
+}
+
+table{
+
+    width:100%;
+
+    background:white;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#003049;
+
+    color:white;
+
+}
+
+th,td{
+
+    padding:15px;
+
+    border:1px solid #ddd;
+
+    text-align:center;
+
+}
+
+
+    .membership-plans{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .membership-plan{
+
+        width:100%;
+
+        max-width:400px;
+
+    }
+
+
+
+}
