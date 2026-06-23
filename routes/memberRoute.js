@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const memberController = require("../controllers/memberController");
+const memberController = require("../Controllers/memberController");
 
 router.get("/", memberController.getAllMembers);
 router.get("/:id", memberController.getMember);
