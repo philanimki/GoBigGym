@@ -21,7 +21,7 @@ app.use("/booking", require("./routes/bookingRoute"));
 app.use("/classes", require("./routes/classRoute"));
 app.use("/payment",
 require("./routes/paymentRoute"));
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 app.listen(PORT, () => {
 
