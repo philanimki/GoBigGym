@@ -119,7 +119,7 @@ result.role.toLowerCase();
             else if(role === "admin"){
 
                 window.location.href =
-                "adminDashboard.html";
+                "AdminDashboard.html";
 
             }
 
