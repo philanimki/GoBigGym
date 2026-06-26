@@ -25,9 +25,9 @@ exports.getClasses = async (req, res) => {
 
                 CONCAT(t.FirstName,' ',t.LastName) AS TrainerName
 
-            FROM GymClass gc
+            FROM gymclass gc
 
-            INNER JOIN Trainer t
+            INNER JOIN trainer t
 
                 ON gc.Trainer_ID = t.Trainer_ID
 

@@ -5,17 +5,17 @@ exports.getDashboard = async (req, res) => {
     try {
 
         const [[members]] = await pool.execute(
-            "SELECT COUNT(*) AS TotalMembers FROM Member"
+            "SELECT COUNT(*) AS TotalMembers FROM member"
         );
 
         const [[trainers]] = await pool.execute(
-            "SELECT COUNT(*) AS TotalTrainers FROM Trainer"
+            "SELECT COUNT(*) AS TotalTrainers FROM trainer"
         );
 
         const [[active]] = await pool.execute(`
             SELECT COUNT(*) AS ActiveMembers
-            FROM Member m
-            INNER JOIN Membership ms
+            FROM member m
+            INNER JOIN membership ms
                 ON m.Membership_ID = ms.Membership_ID
             WHERE ms.Status = 'Active'
         `);

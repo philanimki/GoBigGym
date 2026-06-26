@@ -22,7 +22,7 @@ exports.createBooking = async (req,res)=>{
 
             SELECT *
 
-            FROM Booking
+            FROM booking
 
             WHERE
 

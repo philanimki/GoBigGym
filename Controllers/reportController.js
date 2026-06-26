@@ -45,7 +45,7 @@ exports.getDashboard = async (req, res) => {
 
                     END) AS VIPRevenue
 
-            FROM Membership
+            FROM membership
 
             WHERE Status='Active'
             `

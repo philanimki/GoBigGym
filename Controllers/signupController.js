@@ -25,7 +25,7 @@ exports.signup = async (req, res) => {
 
         const [exists] = await connection.execute(
 
-            "SELECT * FROM Member WHERE Email=?",
+            "SELECT * FROM member WHERE Email=?",
 
             [email]
 

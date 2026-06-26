@@ -15,9 +15,9 @@ ms.PlansName,
 
 ms.Price
 
-FROM Member m
+FROM member m
 
-INNER JOIN Membership ms
+INNER JOIN membership ms
 
 ON m.Membership_ID=ms.Membership_ID
 
@@ -40,7 +40,7 @@ const {memberID}=req.body;
 await pool.execute(
 
 `
-INSERT INTO Payment
+INSERT INTO payment
 (
 Member_ID,
 Amount,
@@ -52,7 +52,7 @@ VALUES
 ?,
 (
 SELECT Price
-FROM Membership ms
+FROM membership ms
 INNER JOIN Member m
 ON ms.Membership_ID=m.Membership_ID
 WHERE m.Member_ID=?

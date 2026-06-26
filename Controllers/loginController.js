@@ -26,7 +26,7 @@ exports.login = async (req, res) => {
 
                 Role
 
-            FROM Member
+            FROM member
 
             WHERE Email = ?
 

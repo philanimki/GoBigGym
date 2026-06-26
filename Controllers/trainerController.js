@@ -28,7 +28,7 @@ exports.getDashboard = async (req, res) => {
             `
             SELECT COUNT(*) AS TotalClasses
 
-            FROM GymClass
+            FROM gymClass
 
             WHERE Trainer_ID = ?
             `,

@@ -12,8 +12,8 @@ exports.getAllMembers = async (req, res) => {
                 CONCAT(m.FirstName,' ',m.LastName) AS FullName,
                 ms.PlansName,
                 ms.Status
-            FROM Member m
-            INNER JOIN Membership ms
+            FROM member m
+            INNER JOIN membership ms
                 ON m.Membership_ID = ms.Membership_ID
         `;
 

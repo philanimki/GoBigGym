@@ -25,13 +25,13 @@ exports.getDashboard = async (req, res) => {
 
                 gc.ScheduleTime
 
-            FROM Member m
+            FROM member m
 
-            INNER JOIN Membership ms
+            INNER JOIN membership ms
 
                 ON m.Membership_ID = ms.Membership_ID
 
-            LEFT JOIN GymClass gc
+            LEFT JOIN gymClass gc
 
                 ON ms.Membership_ID = gc.Membership_ID
 
