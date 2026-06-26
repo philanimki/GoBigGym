@@ -28,7 +28,7 @@ exports.getDashboard = async (req, res) => {
             `
             SELECT COUNT(*) AS TotalClasses
 
-            FROM gymClass
+            FROM gymclass
 
             WHERE Trainer_ID = ?
             `,
@@ -45,13 +45,13 @@ exports.getDashboard = async (req, res) => {
             `
             SELECT COUNT(*) AS AssignedMembers
 
-            FROM Member m
+            FROM member m
 
-            INNER JOIN Membership ms
+            INNER JOIN membership ms
 
                 ON m.Membership_ID = ms.Membership_ID
 
-            INNER JOIN GymClass gc
+            INNER JOIN gymclass gc
 
                 ON ms.Membership_ID = gc.Membership_ID
 

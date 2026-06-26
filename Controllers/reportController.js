@@ -90,7 +90,7 @@ exports.getMembershipReport = async (req, res) => {
 
                 SUM(Price*12) AS AnnualRevenue
 
-            FROM Membership
+            FROM membership
 
             WHERE Status='Active'
 

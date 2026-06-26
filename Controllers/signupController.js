@@ -81,7 +81,7 @@ exports.signup = async (req, res) => {
 
         await connection.execute(
 
-            `INSERT INTO Member
+            `INSERT INTO member
             (
                 FirstName,
                 LastName,

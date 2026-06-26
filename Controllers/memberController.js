@@ -120,7 +120,7 @@ exports.createMember = async (req, res) => {
         // Insert into Membership
         const [membershipResult] = await connection.execute(
 
-            `INSERT INTO Membership
+            `INSERT INTO membership
             (
                 PlansName,
                 Duration,
@@ -144,7 +144,7 @@ exports.createMember = async (req, res) => {
         // Insert into Member
         const [memberResult] = await connection.execute(
 
-            `INSERT INTO Member
+            `INSERT INTO member
             (
                 FirstName,
                 LastName,
@@ -241,9 +241,9 @@ exports.getMember = async (req, res) => {
 
                 ms.Status
 
-            FROM Member m
+            FROM member m
 
-            INNER JOIN Membership ms
+            INNER JOIN membership ms
 
                 ON m.Membership_ID = ms.Membership_ID
 
@@ -323,7 +323,7 @@ console.log("status =", req.body.status);
 const [membership] = await connection.execute(
     `
     SELECT Membership_ID
-    FROM Member
+    FROM member
     WHERE Member_ID = ?
     `,
     [memberID]
@@ -380,7 +380,7 @@ console.log(membership);
         await connection.execute(
 
             `
-            UPDATE Membership
+            UPDATE membership
 
             SET
 

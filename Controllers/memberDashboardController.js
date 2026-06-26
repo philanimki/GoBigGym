@@ -31,7 +31,7 @@ exports.getDashboard = async (req, res) => {
 
                 ON m.Membership_ID = ms.Membership_ID
 
-            LEFT JOIN gymClass gc
+            LEFT JOIN gymclass gc
 
                 ON ms.Membership_ID = gc.Membership_ID
 

@@ -53,7 +53,7 @@ VALUES
 (
 SELECT Price
 FROM membership ms
-INNER JOIN Member m
+INNER JOIN member m
 ON ms.Membership_ID=m.Membership_ID
 WHERE m.Member_ID=?
 ),

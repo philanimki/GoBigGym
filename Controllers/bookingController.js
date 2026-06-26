@@ -62,7 +62,7 @@ exports.createBooking = async (req,res)=>{
 
             `
 
-            INSERT INTO Booking
+            INSERT INTO booking
 
             (
 
@@ -160,12 +160,12 @@ exports.getBookingMember = async (req, res) => {
 
                 b.BookingStatus
 
-            FROM Booking b
+            FROM booking b
 
-            INNER JOIN GymClass gc
+            INNER JOIN gymclass gc
                 ON b.Class_ID = gc.Class_ID
 
-            INNER JOIN Trainer t
+            INNER JOIN trainer t
                 ON gc.Trainer_ID = t.Trainer_ID
 
             WHERE b.Member_ID = ?
