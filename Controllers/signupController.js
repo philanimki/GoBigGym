@@ -49,7 +49,7 @@ exports.signup = async (req, res) => {
 
         const [membership] = await connection.execute(
 
-            `INSERT INTO Membership
+            `INSERT INTO membership
             (
                 PlansName,
                 Duration,
