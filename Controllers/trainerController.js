@@ -150,7 +150,7 @@ exports.getSchedule = async (req, res) => {
             INNER JOIN membership ms
                 ON m.Membership_ID = ms.Membership_ID
 
-            INNER JOIN gymClass gc
+            INNER JOIN gymclass gc
                 ON ms.Membership_ID = gc.Membership_ID
 
             INNER JOIN trainer t
